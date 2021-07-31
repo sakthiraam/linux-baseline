@@ -107,3 +107,12 @@ control 'package-09' do
     it { should_not be_installed }
   end
 end
+
+control 'package-10' do
+  impact 1.0
+  title 'Check if ClamAV antivirus is installed'
+  desc 'ClamAV is an open source antivirus engine for detecting trojans, viruses, malware & other malicious threats'
+  describe package('clamav') do
+    it { should be_installed }
+  end
+end
